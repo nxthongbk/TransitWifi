@@ -1,0 +1,30 @@
+version: 1.0.0
+sandboxed: false
+executables:
+{
+	wifiApTest = ( wifiApTestComponent )
+}
+
+processes:
+{
+	envVars:
+	{
+		LE_LOG_LEVEL = DEBUG
+	}
+
+	run:
+	{
+		(wifiApTest)
+	}
+
+	maxCoreDumpFileBytes: 512K
+	maxFileBytes: 512K
+}
+
+start: manual
+bindings:
+{
+	wifiApTest.wifiApTestComponent.le_wifiAp -> wifiService.le_wifiAp
+}
+
+maxFileSystemBytes: 512K

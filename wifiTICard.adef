@@ -1,0 +1,28 @@
+version: 0.1
+
+sandboxed: false
+
+executables:
+{
+	wifiTICard = ( wifiTICardComponent )
+}
+
+processes:
+{
+	envVars:
+	{
+		LE_LOG_LEVEL = DEBUG
+	}
+
+	run:
+	{
+		(wifiTICard)
+	}
+}
+
+start: manual
+
+bindings:
+{
+	wifiTICard.wifiTICardComponent.le_wifiAp -> wifiService.le_wifiAp
+}

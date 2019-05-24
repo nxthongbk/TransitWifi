@@ -1,0 +1,12 @@
+sources:
+{
+	wifiTICard.c
+}
+
+requires:
+{
+	api:
+	{
+		${LEGATO_ROOT}/interfaces/wifi/le_wifiAp.api
+	}
+}
